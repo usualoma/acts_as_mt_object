@@ -1,0 +1,32 @@
+=ActsAsMtObject
+
+Acts as Movable Type's object.
+
+
+=FEATURES
+
+* Setup aliases. (e.g. "title" to "entry_title")
+* Can access meta table data.
+* Can access custom fields data.
+
+
+=PROBLEMS
+
+* Can't save meta table data.
+* Can't save custom fields data.
+
+
+=Example
+
+  class MT::Entry < ActiveRecord::Base
+    acts_as_mt_object
+  end
+
+or
+
+  class Plan < ActiveRecord::Base
+    acts_as_mt_object :mt_class => :Entry
+  end
+
+
+Copyright (c) 2011 ToI Inc., released under the MIT license
