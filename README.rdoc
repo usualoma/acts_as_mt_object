@@ -3,20 +3,22 @@
 Acts as Movable Type's object.
 
 
-=FEATURES
+=Features
 
 * Setup aliases. (e.g. "title" to "entry_title")
 * Can access meta table data.
 * Can access custom fields data.
 
 
-=PROBLEMS
+=Problems
 
 * Can't save meta table data.
 * Can't save custom fields data.
 
 
 =Example
+
+== import
 
   class MT::Entry < ActiveRecord::Base
     acts_as_mt_object
@@ -29,4 +31,16 @@ or
   end
 
 
-Copyright (c) 2011 ToI Inc., released under the MIT license
+== use
+
+  > entry = MT::Entry.find(343)  # find by entry_id
+   => #<MT::Entry entry_id: 343 ...
+  > entry.title  # column data
+   => "Title"
+  > entry.current_revision  # meta data
+   => 1
+  > entry.price # custom field's data
+   => 30000
+
+
+Copyright (c) 2011-2012 ToI Inc., released under the MIT license
