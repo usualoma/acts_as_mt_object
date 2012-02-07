@@ -18,7 +18,7 @@ Acts as Movable Type's object.
 
 =Example
 
-== import
+== include
 
   class MT::Entry < ActiveRecord::Base
     acts_as_mt_object
