@@ -3,22 +3,32 @@
 Acts as Movable Type's object.
 
 
-=Features
+== Features
 
 * Setup aliases. (e.g. "title" to "entry_title")
 * Can access meta table data.
 * Can access custom fields data.
+* Only "mysql2" adapter is supported.
 
 
-=Problems
+== Problems
 
 * Can't save meta table data.
 * Can't save custom fields data.
 
 
-=Example
+== Install
 
-== include
+Put this line in your Gemfile:
+  gem 'acts_as_mt_object'
+
+Then bundle:
+  $ bundle
+
+
+== Example
+
+=== Include
 
   class MT::Entry < ActiveRecord::Base
     acts_as_mt_object
@@ -31,7 +41,7 @@ or
   end
 
 
-== use
+=== Usage
 
   > entry = MT::Entry.find(343)  # find by entry_id
    => #<MT::Entry entry_id: 343 ...
@@ -43,4 +53,4 @@ or
    => 30000
 
 
-Copyright (c) 2011-2012 ToI Inc., released under the MIT license
+Copyright 2011-2012 ToI Inc., released under the MIT license
